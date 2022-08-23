@@ -24,6 +24,8 @@ export default {
     async read(req: Request, res: Response){
         const ReadBook = await biblioteca.find()
 
+        console.log(ReadBook)
+
         return res.json({
             ReadBook,
             url: 'http://localhost:3434/files/'

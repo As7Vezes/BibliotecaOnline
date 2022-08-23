@@ -9,9 +9,8 @@ const app = express()
 
 app.use(cors())
 app.use('/files', express.static(path.resolve(__dirname,'..','uploads')))
-app.use(bodyParser.json()) 
 app.use(routes)
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 app.listen(4444, () => {
