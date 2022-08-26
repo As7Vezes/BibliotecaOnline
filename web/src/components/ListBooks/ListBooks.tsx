@@ -7,17 +7,24 @@ export function ListBooks(){
     const [url, setUrl] = useState('')
 
     useEffect(() => {
+
+        api.get('items').then(response => {
+            console.log(response)
+        })
         
-        const getImage = async () => {
-            const response = await api.get('/read')
+        // const getImage = async () => {
+        //     const response = await api.get('/read')
+        //         .then(setData(response.data))
 
-            setData(response.data)
-            setUrl(response.data.url)
 
-            console.log(data)
-        }
+        //     console.log(response)
+        //     setData(response.data)
+        //     setUrl(response.data.url)
 
-        getImage()
+        //     console.log(data)
+        // }
+
+        // getImage()
 
     }, [])
 

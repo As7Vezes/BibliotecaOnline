@@ -1,6 +1,5 @@
 import knex from "knex";
 import path from "path";
-import { deflate } from "zlib";
 
 const connection = knex({
     client: 'sqlite3',

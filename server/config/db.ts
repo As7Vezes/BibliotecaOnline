@@ -14,7 +14,7 @@ export async function run(){
 
 run() */
 
-import mongoose from "mongoose"
+/* import mongoose from "mongoose"
 
 (async () => {
 
@@ -24,7 +24,7 @@ import mongoose from "mongoose"
     } catch (error) {
       console.error(error)
     }
-  })()
+  })() */
 
 
 
