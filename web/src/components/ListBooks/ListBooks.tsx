@@ -1,34 +1,37 @@
 import { useEffect, useState } from "react"
 import { api } from "../../api/api"
+import { CardBook } from "../CardBook/Cardbook"
+
+import { IFormState } from "../form/FormBook"
 
 export function ListBooks(){
 
-    const [data, setData] = useState([])
-    const [url, setUrl] = useState('')
+    const [data, setData] = useState<IFormState[]>([])
+    const [url, setUrl] = useState<string>('')
+  
+    const getImage = async () => {
+        const response: any = await api.get('/read')
+        
+        setData(response.data.products)
+        setUrl(response.data.url)
+    }
 
     useEffect(() => {
 
-        api.get('items').then(response => {
-            console.log(response)
-        })
-        
-        // const getImage = async () => {
-        //     const response = await api.get('/read')
-        //         .then(setData(response.data))
-
-
-        //     console.log(response)
-        //     setData(response.data)
-        //     setUrl(response.data.url)
-
-        //     console.log(data)
-        // }
-
-        // getImage()
+        getImage()
 
     }, [])
 
-    return (
-        <div></div>
+    return(
+        <div className="flex ">
+            {data.map((data: IFormState) => (
+                <CardBook 
+                    id={data.id} 
+                    nome={data.nome} 
+                    autor={data.autor} 
+                    editora={data.editora}
+                    imagem={url + data.imagem} />
+            ))}
+        </div>
     )
 }

@@ -2,7 +2,8 @@ module.exports = {
   content: ["./src/**/*.tsx"],
   theme: {
     fontFamily:{
-      'sans': 'Roboto'
+      'sans': 'Roboto',
+      'Lara': ['"Lara"', 'serif']
     },
     extend: {},
     colors: {
