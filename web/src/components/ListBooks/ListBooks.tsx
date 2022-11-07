@@ -25,12 +25,12 @@ export function ListBooks(){
     return(
         <div className="flex ">
             {data.map((data: IFormState) => (
-                <CardBook 
+                <CardBook key={data.id}
                     id={data.id} 
                     nome={data.nome} 
                     autor={data.autor} 
                     editora={data.editora}
-                    imagem={url + data.imagem} />
+                    imagem={data.imagem} />
             ))}
         </div>
     )
