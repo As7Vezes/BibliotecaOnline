@@ -56,8 +56,12 @@ export function FormBook() {
             console.log(imageId)
             
             const response = await api.post('/post', {...formState, imagem: imageId})
+
+            setFormState({...formState, ...response.data[0]})
             
-            setFormState({ ...formState, ...response.data[0] })
+            if(response){
+                location.reload()
+            }
           }
         )
     }

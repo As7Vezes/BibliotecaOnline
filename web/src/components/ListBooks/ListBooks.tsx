@@ -33,7 +33,6 @@ export function ListBooks(){
                 nome={data.nome}
                 autor={data.autor}
                 editora={data.editora}
-                url={url}
                  />
             ))}
         </div>
